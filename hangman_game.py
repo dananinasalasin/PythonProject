@@ -12,6 +12,9 @@ MAX_TRIES = 6
 
 print(HANGMAN_ASCII_ART)
 print(MAX_TRIES)
+player_string = input("Please enter a word: ")
+result = " ".join("_" * len(player_string))
+print(result)
 player_guess = input("Guess a letter: ").lower()
 print(player_guess)
 
