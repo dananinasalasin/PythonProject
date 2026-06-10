@@ -15,8 +15,15 @@ print(MAX_TRIES)
 player_string = input("Please enter a word: ")
 result = " ".join("_" * len(player_string))
 print(result)
-player_guess = input("Guess a letter: ").lower()
-print(player_guess)
+player_guess = input("Guess a letter: ")
+if len(player_guess) != 1 and not player_guess.isalpha():
+    print("E3")
+elif len(player_guess) != 1:
+    print("E1")
+elif not player_guess.isalpha():
+    print("E2")
+else:
+    print(player_guess.lower())
 
 print("""
 picture 1:
