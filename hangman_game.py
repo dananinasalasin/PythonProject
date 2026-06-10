@@ -12,7 +12,7 @@ MAX_TRIES = 6
 
 print(HANGMAN_ASCII_ART)
 print(MAX_TRIES)
-player_guess = input("Guess a letter: ")
+player_guess = input("Guess a letter: ").lower()
 print(player_guess)
 
 print("""
