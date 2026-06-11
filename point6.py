@@ -7,3 +7,10 @@ def shift_left(my_list):
     return my_list
 
 #print(shift_left([0, 1, 2]))
+
+# 6.2.3
+def format_list(my_list):
+    return ", ".join(my_list[:-1:2]) + ", and " + my_list[-1]
+
+my_list = ["hydrogen", "helium", "lithium", "beryllium", "boron", "magnesium"]
+print(format_list(my_list))
