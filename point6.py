@@ -31,4 +31,12 @@ def are_lists_equal(list1, list2):
 list1 = [0.6, 1, 2, 3]
 list2 = [3, 2, 0.6, 1]
 list3 = [9, 0, 5, 10.5]
-print(are_lists_equal(list1, list2))
+#print(are_lists_equal(list1, list2))
+
+# 6.3.2
+def longest(my_list):
+    longest_mem = max(my_list, key=len)
+    return longest_mem
+
+list1 = ["111", "234", "2000", "goru", "birthday", "09"]
+print(longest(list1))
