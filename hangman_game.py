@@ -1,5 +1,15 @@
 def check_valid_input(letter_guessed, old_letters_guessed):
-    return len(letter_guessed) == 1 and letter_guessed.isalpha() and letter_guessed not in old_letters_guessed
+    return len(letter_guessed) == 1 and letter_guessed.isalpha() and letter_guessed.lower() not in old_letters_guessed
+
+def try_update_letter_guessed(letter_guessed, old_letters_guessed):
+    letter_guessed = letter_guessed.lower()
+    if check_valid_input(letter_guessed, old_letters_guessed):
+        old_letters_guessed.append(letter_guessed)
+        return True
+    else:
+        print("X")
+        print(" -> ".join(sorted(old_letters_guessed)))
+        return False
 
 HANGMAN_ASCII_ART = """Welcome to the game Hangman
     _    _
@@ -15,15 +25,18 @@ MAX_TRIES = 6
 
 print(HANGMAN_ASCII_ART)
 print(MAX_TRIES)
+
 player_string = input("Please enter a word: ")
 result = " ".join("_" * len(player_string))
 print(result)
+
 old_letters = ['a', 'b', 'c']
 player_guess = input("Guess a letter: ")
-if check_valid_input(player_guess, old_letters):
-    print(check_valid_input(player_guess, old_letters), player_guess.lower())
+
+if try_update_letter_guessed(player_guess, old_letters):
+    print(True)
 else:
-    print(check_valid_input(player_guess, old_letters))
+    print(False)
 
 print("""
 picture 1:
