@@ -26,6 +26,15 @@ def fix_age(age):
 def filter_teens(a = 13, b = 13, c = 13):
     return fix_age(a) + fix_age(b) + fix_age(c)
 
-print(filter_teens(2, 1, 15))
+#print(filter_teens(2, 1, 15))
+
+# 5.3.7
+def chocolate_maker(small, big, x):
+    if small + 5 * big >= x:
+        return True
+    return False
+
+print(chocolate_maker(3, 2, 10))
+
 
 
