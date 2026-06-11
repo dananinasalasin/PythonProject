@@ -17,7 +17,8 @@ my_list = ["hydrogen", "helium", "lithium", "beryllium", "boron", "magnesium"]
 
 # 6.2.4
 def extend_list_x(list_x, list_y):
-    return list_y + list_x
+    list_x[:0] = list_y
+    return list_x
 
 x = [4, 5, 6]
 y = [1, 2, 3]
