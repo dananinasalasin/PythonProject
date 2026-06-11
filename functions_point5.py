@@ -34,7 +34,23 @@ def chocolate_maker(small, big, x):
         return True
     return False
 
-print(chocolate_maker(3, 2, 10))
+#print(chocolate_maker(3, 2, 10))
 
 
+# 5.4.1
+def func(num1, num2):
+    """
+    The function receives two numbers and returns their sum.
+    Parameters:
+    num1 (int/float) - The first number.
+    num2 (int/float) - The second number.
+    Return value:
+    int/float - The sum of the two numbers.
+    """
+    return num1 + num2
 
+def main():
+    help(func)
+
+if __name__ == "__main__":
+    main()
