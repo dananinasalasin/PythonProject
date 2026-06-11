@@ -22,4 +22,13 @@ def extend_list_x(list_x, list_y):
 
 x = [4, 5, 6]
 y = [1, 2, 3]
-print(extend_list_x(x, y))
+#print(extend_list_x(x, y))
+
+# 6.3.1
+def are_lists_equal(list1, list2):
+    return sorted(list1) == sorted(list2)
+
+list1 = [0.6, 1, 2, 3]
+list2 = [3, 2, 0.6, 1]
+list3 = [9, 0, 5, 10.5]
+print(are_lists_equal(list1, list2))
