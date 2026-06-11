@@ -13,4 +13,12 @@ def format_list(my_list):
     return ", ".join(my_list[:-1:2]) + ", and " + my_list[-1]
 
 my_list = ["hydrogen", "helium", "lithium", "beryllium", "boron", "magnesium"]
-print(format_list(my_list))
+#print(format_list(my_list))
+
+# 6.2.4
+def extend_list_x(list_x, list_y):
+    return list_y + list_x
+
+x = [4, 5, 6]
+y = [1, 2, 3]
+print(extend_list_x(x, y))
