@@ -1,3 +1,6 @@
+def is_valid_input(letter_guessed):
+    return len(letter_guessed) == 1 and letter_guessed.isalpha()
+
 HANGMAN_ASCII_ART = """Welcome to the game Hangman
     _    _
    | |  | |
@@ -16,14 +19,10 @@ player_string = input("Please enter a word: ")
 result = " ".join("_" * len(player_string))
 print(result)
 player_guess = input("Guess a letter: ")
-if len(player_guess) != 1 and not player_guess.isalpha():
-    print("E3")
-elif len(player_guess) != 1:
-    print("E1")
-elif not player_guess.isalpha():
-    print("E2")
+if is_valid_input(player_guess):
+    print(is_valid_input(player_guess), player_guess.lower())
 else:
-    print(player_guess.lower())
+    print(is_valid_input(player_guess))
 
 print("""
 picture 1:
