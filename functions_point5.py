@@ -14,4 +14,18 @@ def distance(num1, num2, num3):
             return True
     return False
 
-print(distance(4, 5, 3))
+#print(distance(4, 5, 3))
+
+# 5.3.6
+def fix_age(age):
+    if age >= 13 and age <= 19:
+        if age != 15 and age != 16:
+            return 0
+    return age
+
+def filter_teens(a = 13, b = 13, c = 13):
+    return fix_age(a) + fix_age(b) + fix_age(c)
+
+print(filter_teens(2, 1, 15))
+
+
