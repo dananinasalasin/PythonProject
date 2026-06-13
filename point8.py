@@ -76,3 +76,15 @@ elif choice == 7:
     birth_year = int(details["birth_date"].split(".")[2])
     details["age"] = 2026 - birth_year
     print(details["age"])
+
+# 8.3.3
+def count_chars(my_str):
+    result = {}
+    for char in my_str:
+        if char != " ":
+            if char in result: result[char] += 1
+            else: result[char] = 1
+    return result
+
+magic_str = "abra cadabra"
+print(count_chars(magic_str))
