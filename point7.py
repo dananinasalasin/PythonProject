@@ -49,4 +49,57 @@ def sequence_del(my_str):
             original_str += my_str[i]
     return original_str
 
-print(sequence_del("Heeyyy   yyouuuu!!!"))
+#print(sequence_del("Heeyyy   yyouuuu!!!"))
+
+# 7.2.6
+products_str = input("Please enter your products list: ")
+products_list = products_str.split(",")
+client_choice = int(input(
+    "Please choose an option:\n"
+    "1. Print the product list\n"
+    "2. Print the number of products\n"
+    "3. Check if a product exists in the list\n"
+    "4. Count how many times a product appears\n"
+    "5. Remove a product from the list\n"
+    "6. Add a product to the list\n"
+    "7. Print all invalid products\n"
+    "8. Remove duplicate products\n"
+    "9. Exit\n"
+))
+while client_choice != 9:
+    if client_choice == 1:
+        for item in products_list:
+            print(item)
+    elif client_choice == 2:
+        print(len(products_list))
+    elif client_choice == 3:
+        product = input("Please enter the product name: ")
+        if product in products_list: print("It appears that the product exists in the list")
+        else: print("It doesn't exist in the list")
+    elif client_choice == 4:
+        product = input("Please enter the product name: ")
+        print(products_list.count(product))
+    elif client_choice == 5:
+        product = input("Please enter the product name: ")
+        products_list.remove(product)
+    elif client_choice == 6:
+        product = input("Please enter the product name: ")
+        products_list.append(product)
+    elif client_choice == 7:
+        for item in products_list:
+            if len(item) < 3 or not item.isalpha():
+                print(item)
+    elif client_choice == 8:
+        products_list = list(set(products_list))
+
+    client_choice = int(input(
+    "Please choose an option:\n"
+    "1. Print the product list\n"
+    "2. Print the number of products\n"
+    "3. Check if a product exists in the list\n"
+    "4. Count how many times a product appears\n"
+    "5. Remove a product from the list\n"
+    "6. Add a product to the list\n"
+    "7. Print all invalid products\n"
+    "8. Remove duplicate products\n"
+    "9. Exit\n"))
