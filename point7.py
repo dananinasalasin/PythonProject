@@ -17,4 +17,14 @@ def is_greater(my_list, n):
     return list_greater
 
 result = is_greater([1, 30, 25, 60, 27, 28], 28)
-print(result)
+#print(result)
+
+# 7.2.2
+def numbers_letters_count(my_str):
+    num_lett_count = [0,0]
+    for lett in my_str:
+        if lett.isdigit(): num_lett_count[0] += 1
+        else: num_lett_count[1] += 1
+    return num_lett_count
+
+print(numbers_letters_count("Python 3.6.3"))
