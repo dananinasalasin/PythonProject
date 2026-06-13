@@ -35,3 +35,18 @@ def copy_file_content(source, destination):
     with open(destination, "w") as dest_file:
         dest_file.write(content)
 
+
+# 9.2.3
+def who_is_missing(file_name):
+    with open(file_name, "r") as file:
+        numbers = file.read().split(",")
+    numbers = [int(num) for num in numbers]
+    n = len(numbers) + 1
+    for i in range(1, n + 1):
+        if i not in numbers:
+            missing = i
+            break
+    with open("found.txt", "w") as file:
+        file.write(str(missing))
+    return missing
+
