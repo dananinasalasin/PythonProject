@@ -29,6 +29,15 @@ def check_win(secret_word, old_letters_guessed):
 def print_hangman(num_of_tries):
     print(HANGMAN_PHOTOS[num_of_tries])
 
+def choose_word(file_path, index):
+    with open(file_path, "r") as file:
+        words = file.read().split()
+    unique_words = list(set(words))
+    num_unique = len(unique_words)
+    unique_words.sort()
+    real_index = (index - 1) % len(words)
+    return (num_unique, words[real_index])
+
 HANGMAN_ASCII_ART = """Welcome to the game Hangman
     _    _
    | |  | |
