@@ -73,3 +73,17 @@ def my_mp3_playlist(file_path):
             singer_count[singer] = 1
     most_common_singer = max(singer_count, key=singer_count.get)
     return (max_song, len(lines), most_common_singer)
+
+# 9.3.2
+def my_mp4_playlist(file_path, new_song):
+    with open(file_path, "r") as file:
+        lines = file.readlines()
+    while len(lines) < 3:
+        lines.append("\n")
+    third_line = lines[2].strip().split(";")
+    third_line[0] = new_song
+    lines[2] = ";".join(third_line) + "\n"
+    with open(file_path, "w") as file:
+        file.writelines(lines)
+    for line in lines:
+        print(line, end="")
