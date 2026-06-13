@@ -27,4 +27,16 @@ def numbers_letters_count(my_str):
         else: num_lett_count[1] += 1
     return num_lett_count
 
-print(numbers_letters_count("Python 3.6.3"))
+#print(numbers_letters_count("Python 3.6.3"))
+
+# 7.2.4
+def seven_boom(end_number):
+    numbers_list = []
+    for i in range (end_number + 1):
+        if i % 7 == 0 or str(7) in str(i):
+            numbers_list.append("BOOM")
+        else:
+            numbers_list.append(i)
+    return numbers_list
+
+print(seven_boom(17))
