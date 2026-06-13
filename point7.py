@@ -103,3 +103,13 @@ while client_choice != 9:
     "7. Print all invalid products\n"
     "8. Remove duplicate products\n"
     "9. Exit\n"))
+
+# 7.2.7
+def arrow(my_char, max_length):
+    for i in range(1, max_length + 1):
+        print(my_char * i)
+    for i in range(max_length - 1, 0, -1):
+        print(my_char * i)
+
+print(arrow('*', 5))
+
