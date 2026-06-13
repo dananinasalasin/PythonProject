@@ -7,3 +7,23 @@ def are_files_equal(file1, file2):
     return content1 == content2
 
 # 9.1.2
+file_path = input("Enter a file path: ")
+task = input("Enter a task (sort / rev / last): ")
+with open(file_path, "r") as file:
+    lines = file.readlines()
+lines = [line.strip() for line in lines]
+if task == "sort":
+    words = []
+    for line in lines:
+        words.extend(line.split())
+    unique_words = sorted(set(words))
+    print(unique_words)
+
+elif task == "rev":
+    for line in lines:
+        print(line[::-1])
+
+elif task == "last":
+    num = int(input("Enter a number: "))
+    for line in lines[-num:]:
+        print(line)
