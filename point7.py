@@ -39,4 +39,14 @@ def seven_boom(end_number):
             numbers_list.append(i)
     return numbers_list
 
-print(seven_boom(17))
+#print(seven_boom(17))
+
+# 7.2.5
+def sequence_del(my_str):
+    original_str = ""
+    for i in range(len(my_str)):
+        if my_str[i] != my_str[i-1]:
+            original_str += my_str[i]
+    return original_str
+
+print(sequence_del("Heeyyy   yyouuuu!!!"))
