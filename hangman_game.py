@@ -26,6 +26,9 @@ def check_win(secret_word, old_letters_guessed):
             return False
     return True
 
+def print_hangman(num_of_tries):
+    print(HANGMAN_PHOTOS[num_of_tries])
+
 HANGMAN_ASCII_ART = """Welcome to the game Hangman
     _    _
    | |  | |
@@ -38,6 +41,59 @@ HANGMAN_ASCII_ART = """Welcome to the game Hangman
 
 MAX_TRIES = 6
 
+HANGMAN_PHOTOS = {
+    0: """
+x-------x
+""",
+    1: """
+x-------x
+|
+|
+|
+|
+|
+""",
+    2: """
+x-------x
+|       |
+|       0
+|
+|
+|
+""",
+    3: """
+x-------x
+|       |
+|       0
+|       |
+|
+|
+""",
+    4: """
+x-------x
+|       |
+|       0
+|      /|\\
+|
+|
+""",
+    5: """
+x-------x
+|       |
+|       0
+|      /|\\
+|      /
+|
+""",
+    6: """
+x-------x
+|       |
+|       0
+|      /|\\
+|      / \\
+|
+"""
+}
 print(HANGMAN_ASCII_ART)
 print(MAX_TRIES)
 
@@ -54,67 +110,4 @@ if try_update_letter_guessed(player_guess, old_letters):
 else:
     print(False)
 
-print("""
-picture 1:
-    x-------x
-""")
-
-print("""
-picture 2:
-    x-------x
-    |
-    |
-    |
-    |
-    |
-""")
-
-print("""
-picture 3:
-    x-------x
-    |       |
-    |       0
-    |
-    |
-    |
-""")
-
-print("""
-picture 4:
-    x-------x
-    |       |
-    |       0
-    |       |
-    |
-    |
-""")
-
-print("""
-picture 5:
-    x-------x
-    |       |
-    |       0
-    |      /|\\
-    |
-    |
-""")
-
-print("""
-picture 6:
-    x-------x
-    |       |
-    |       0
-    |      /|\\
-    |      /
-    |
-""")
-
-print("""
-picture 7:
-    x-------x
-    |       |
-    |       0
-    |      /|\\
-    |      / \\
-    |
-""")
+print_hangman(3)
