@@ -20,6 +20,12 @@ def show_hidden_word(secret_word, old_letters_guessed):
             result.append("_")
     return " ".join(result)
 
+def check_win(secret_word, old_letters_guessed):
+    for letter in secret_word:
+        if letter not in old_letters_guessed:
+            return False
+    return True
+
 HANGMAN_ASCII_ART = """Welcome to the game Hangman
     _    _
    | |  | |
