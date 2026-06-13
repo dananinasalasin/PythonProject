@@ -40,3 +40,39 @@ def sort_anagrams(list_of_strings):
 
 list_of_words = ['deltas', 'retainers', 'desalt', 'pants', 'slated', 'generating', 'ternaries', 'smelters', 'termless', 'salted', 'staled', 'greatening', 'lasted', 'resmelts']
 #print(sort_anagrams(list_of_words))
+
+# 8.3.2
+details = {
+    "first_name": "Mariah",
+    "last_name": "Carey",
+    "birth_date": "27.03.1970",
+    "hobbies": ["Sing", "Compose", "Act"]
+}
+choice = int(input(
+    "Choose an option (1-7):\n"
+    "1. Print last name\n"
+    "2. Print birth month\n"
+    "3. Print number of hobbies\n"
+    "4. Print last hobby\n"
+    "5. Add Cooking hobby\n"
+    "6. Convert birth date to tuple\n"
+    "7. Add age\n"
+))
+if choice == 1:
+    print(details["last_name"])
+elif choice == 2:
+    print(details["birth_date"].split(".")[1])
+elif choice == 3:
+    print(len(details["hobbies"]))
+elif choice == 4:
+    print(details["hobbies"][-1])
+elif choice == 5:
+    details["hobbies"].append("Cooking")
+elif choice == 6:
+    day, month, year = details["birth_date"].split(".")
+    details["birth_date"] = (int(day), int(month), int(year))
+    print(details["birth_date"])
+elif choice == 7:
+    birth_year = int(details["birth_date"].split(".")[2])
+    details["age"] = 2026 - birth_year
+    print(details["age"])
