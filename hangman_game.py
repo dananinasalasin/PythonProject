@@ -11,6 +11,15 @@ def try_update_letter_guessed(letter_guessed, old_letters_guessed):
         print(" -> ".join(sorted(old_letters_guessed)))
         return False
 
+def show_hidden_word(secret_word, old_letters_guessed):
+    result = []
+    for letter in secret_word:
+        if letter in old_letters_guessed:
+            result.append(letter)
+        else:
+            result.append("_")
+    return " ".join(result)
+
 HANGMAN_ASCII_ART = """Welcome to the game Hangman
     _    _
    | |  | |
@@ -31,6 +40,7 @@ result = " ".join("_" * len(player_string))
 print(result)
 
 old_letters = ['a', 'b', 'c']
+print(show_hidden_word(player_string, old_letters))
 player_guess = input("Guess a letter: ")
 
 if try_update_letter_guessed(player_guess, old_letters):
