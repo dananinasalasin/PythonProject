@@ -27,3 +27,11 @@ elif task == "last":
     num = int(input("Enter a number: "))
     for line in lines[-num:]:
         print(line)
+
+# 9.2.2
+def copy_file_content(source, destination):
+    with open(source, "r") as src_file:
+        content = src_file.read()
+    with open(destination, "w") as dest_file:
+        dest_file.write(content)
+
