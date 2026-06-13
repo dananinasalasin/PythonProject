@@ -50,3 +50,26 @@ def who_is_missing(file_name):
         file.write(str(missing))
     return missing
 
+# 9.3.1
+def my_mp3_playlist(file_path):
+    with open(file_path, "r") as file:
+        lines = file.readlines()
+    max_song = ""
+    max_duration = 0
+    singer_count = {}
+    for line in lines:
+        parts = line.strip().split(";")
+        song = parts[0]
+        singer = parts[1]
+        duration = parts[2]
+        minutes, seconds = duration.split(":")
+        total_seconds = int(minutes) * 60 + int(seconds)
+        if total_seconds > max_duration:
+            max_duration = total_seconds
+            max_song = song
+        if singer in singer_count:
+            singer_count[singer] += 1
+        else:
+            singer_count[singer] = 1
+    most_common_singer = max(singer_count, key=singer_count.get)
+    return (max_song, len(lines), most_common_singer)
